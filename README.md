@@ -434,10 +434,6 @@ By end of activity:
 
 ## Next Steps
 
-In next week's lecture, we'll:
-- Build the Flask authentication system using this schema
-- Create patient dashboard UI
-- Implement glucose logging API endpoints
-- Add chatbot message storage
+In next week's lecture, we'll build on this simple Flask app and implement some features to make it a minimum viable product (MVP).
 
 Your schema is the foundation for everything we build!

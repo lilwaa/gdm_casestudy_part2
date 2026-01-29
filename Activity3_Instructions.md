@@ -46,8 +46,8 @@ CREATE TABLE users (
 - Profile types (patient, provider, ASHA worker)
 - Language support (English, Malayalam, Hindi)
 
-**Question for you:** What other user fields are needed?
-
+**Question for you:** What other user fields are needed? 
+whether they are technically flent, have a smartphone
 ---
 
 ### Table 2: `patients` (GDM-Specific Data)
@@ -83,8 +83,8 @@ CREATE TABLE patients (
 
 **YOUR TURN:** What fields from your personas are missing?
 
-- **Urban Priya** needs: ____________________
-- **Rural Lakshmi** needs: ____________________
+- **Urban Priya** needs: whether they live with family, how many times they have been pregnant before, employment status, who cooks
+- **Rural Lakshmi** needs: whether they live with family, how many times they have been pregnant before, employment status, who cooks
 
 Add them below:
 

@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block title %}Log Glucose Reading{% endblock %}
+
+{% block content %}
+<div class="form-container">
+    <h2>Log Glucose Reading</h2>
+    
+    <form method="POST" action="{{ url_for('log_glucose') }}">
+        <div class="form-group">
+            <label for="reading_value">Glucose Reading (mg/dL):</label>
+            <input type="number" name="reading_value" id="reading_value" 
+                   step="0.1" min="0" max="400" required>
+        </div>
+
+        <div class="form-group">
+            <label for="reading_type">Reading Type:</label>
+            <select name="reading_type" id="reading_type" required>
+                <option value="fasting">Fasting (before breakfast)</option>
+                <option value="post_breakfast">Post-Breakfast (2 hours after)</option>
+                <option value="post_lunch">Post-Lunch (2 hours after)</option>
+                <option value="post_dinner">Post-Dinner (2 hours after)</option>
+                <option value="bedtime">Bedtime</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="meal_context">What did you eat? (optional):</label>
+            <textarea name="meal_context" id="meal_context" rows="3"></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="carbs_estimated">Estimated Carbs (grams, optional):</label>
+            <input type="number" name="carbs_estimated" id="carbs_estimated" step="1" min="0">
+        </div>
+
+        <div class="form-group">
+            <label for="notes">Notes (optional):</label>
+            <textarea name="notes" id="notes" rows="2"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Save Reading</button>
+        <a href="{{ url_for('patient_dashboard') }}" class="btn btn-secondary">Cancel</a>
+    </form>
+</div>
+{% endblock %}

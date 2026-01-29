@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block title %}Register - GDM Chatbot{% endblock %}
+
+{% block content %}
+<div class="form-container">
+    <h2>Create Account</h2>
+    
+    {% if error %}
+    <div class="error">{{ error }}</div>
+    {% endif %}
+    
+    <form method="POST" action="{{ url_for('register') }}">
+        <div class="form-group">
+            <label for="profile_type">I am a:</label>
+            <select name="profile_type" id="profile_type" required>
+                <option value="patient">Patient (Pregnant woman with GDM)</option>
+                <option value="provider">Healthcare Provider</option>
+                <option value="asha">ASHA Worker</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="name">Full Name:</label>
+            <input type="text" name="name" id="name" required>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" name="email" id="email" required>
+        </div>
+
+        <div class="form-group">
+            <label for="phone">Phone:</label>
+            <input type="tel" name="phone" id="phone">
+        </div>
+
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" name="password" id="password" required minlength="8">
+        </div>
+
+        <div class="form-group">
+            <label for="language">Preferred Language:</label>
+            <select name="language" id="language">
+                <option value="ml">Malayalam</option>
+                <option value="en">English</option>
+                <option value="hi">Hindi</option>
+            </select>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Register</button>
+    </form>
+    
+    <p>Already have an account? <a href="{{ url_for('login') }}">Login here</a></p>
+</div>
+{% endblock %}

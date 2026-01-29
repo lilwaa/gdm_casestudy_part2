@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block title %}Patient Dashboard{% endblock %}
+
+{% block content %}
+<div class="dashboard">
+    <h1>Welcome, {{ patient.name }}!</h1>
+    
+    <div class="dashboard-cards">
+        <div class="card">
+            <h3>Due Date</h3>
+            <p>{{ patient.due_date }}</p>
+        </div>
+        
+        <div class="card">
+            <h3>Weeks Pregnant</h3>
+            <p>{{ patient.gestational_age_weeks }} weeks</p>
+        </div>
+        
+        <div class="card">
+            <h3>Region</h3>
+            <p>{{ patient.kerala_region }}</p>
+        </div>
+    </div>
+
+    <div class="actions">
+        <a href="{{ url_for('log_glucose') }}" class="btn btn-primary">Log Glucose Reading</a>
+    </div>
+
+    <h2>Recent Glucose Readings</h2>
+    {% if readings %}
+    <table class="readings-table">
+        <thead>
+            <tr>
+                <th>Date/Time</th>
+                <th>Type</th>
+                <th>Reading (mg/dL)</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for reading in readings %}
+            <tr class="{% if reading.flagged_high %}high{% elif reading.flagged_low %}low{% endif %}">
+                <td>{{ reading.timestamp }}</td>
+                <td>{{ reading.reading_type }}</td>
+                <td>{{ reading.reading_value }}</td>
+                <td>
+                    {% if reading.flagged_high %}High{% elif reading.flagged_low %}Low{% else %}Normal{% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+    <p>No glucose readings yet. <a href="{{ url_for('log_glucose') }}">Log your first reading</a></p>
+    {% endif %}
+</div>
+{% endblock %}

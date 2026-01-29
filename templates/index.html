@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="hero">
+    <h1>GDM Chatbot</h1>
+    <p>Supporting pregnant women with gestational diabetes in Kerala</p>
+    
+    <div class="cta-buttons">
+        <a href="{{ url_for('login') }}" class="btn btn-primary">Login</a>
+        <a href="{{ url_for('register') }}" class="btn btn-secondary">Register</a>
+    </div>
+</div>
+{% endblock %}

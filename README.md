@@ -16,3 +16,7 @@ Please complete the following activites in order as we discuss them in class.
 - For additional SQL resources, see these tutorials on table/schema creation (also in slides):
   - https://www.sqlite.org/docs.html
   - Table creation basics: https://www.sqlitetutorial.net/sqlite-create-table/
+
+## Bonus Activity
+
+- Set up your a GitHub Project with a Kanban Workflow for the GDM Chatbot, and learn how to create UX & database cards

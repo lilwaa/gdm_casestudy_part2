@@ -89,8 +89,8 @@ CREATE TABLE patients (
 Add them below:
 
 ```sql
--- TODO: Add your additional fields here
--- Example: notification_preferences TEXT,
+INSERT INTO patients(live_with, times_pregnant, employment, cooks_meals)
+-- ex. STRING, INT, STRING, BOOL
 ```
 
 ---
